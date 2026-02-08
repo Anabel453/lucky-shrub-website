@@ -87,27 +87,49 @@ body {
 --------------------- */
 
 .hero {
-  height: 80vh;
+  height: 85vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2)),
+  background: linear-gradient(to right, rgba(0,0,0,0.65), rgba(0,0,0,0.25)),
     url("https://images.unsplash.com/photo-1468327768560-75b778cbb551?auto=format&fit=crop&w=1600&q=80");
   background-size: cover;
   background-position: center;
   color: white;
-  text-align: left;
 }
 
-.hero-content h2 {
-  font-size: 50px;
-  margin-bottom: 15px;
+.hero-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.hero-content p {
+.hero-box {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 40px;
+  border-radius: 18px;
+  max-width: 650px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-box h2 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.hero-box p {
   font-size: 18px;
-  margin-bottom: 25px;
-  max-width: 600px;
+  margin-bottom: 28px;
+  color: rgba(255, 255, 255, 0.9);
 }
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
 
 /* Button style */
 .btn-primary {
@@ -126,6 +148,24 @@ body {
   background: #1b4332;
   transform: translateY(-2px);
 }
+
+.btn-secondary {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid white;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #1b4332;
+  transform: translateY(-2px);
+}
+
 
 /* --------------------
    SECTIONS GENERAL
@@ -273,7 +313,55 @@ section {
     grid-template-columns: 1fr;
   }
 
-  .hero-content h2 {
-    font-size: 36px;
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
+
+  .hero-box h2 {
+    font-size: 34px;
+  }
+}
+
+/* --------------------
+   PROJECTS SECTION
+--------------------- */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.project-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.12);
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-info h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #1b4332;
+}
+
+.project-info p {
+  font-size: 14px;
+  color: #555;
 }
