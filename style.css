@@ -202,11 +202,11 @@ section {
 
 .card {
   background: white;
-  padding: 25px;
-  border-radius: 12px;
+  padding: 35px 25px;
+  border-radius: 16px;
   width: 300px;
   text-align: center;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.10);
   transition: 0.3s;
 }
 
@@ -217,6 +217,18 @@ section {
 .card h3 {
   margin-bottom: 10px;
   color: #1b4332;
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px auto;
+  border-radius: 50%;
+  background: #e9f5ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
 }
 
 /* --------------------
@@ -307,25 +319,54 @@ section {
 --------------------- */
 
 .contact-form {
+  max-width: 550px;
+  margin: auto;
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.10);
+}
+
+.form-group {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
-  margin: auto;
+  margin-bottom: 18px;
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 12px;
-  border-radius: 8px;
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1b4332;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 14px;
+  border-radius: 10px;
   border: 1px solid #ccc;
-  font-size: 16px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
 }
 
-.contact-form textarea {
-  height: 130px;
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #2d6a4f;
+  box-shadow: 0px 0px 0px 4px rgba(45, 106, 79, 0.15);
+}
+
+.form-group textarea {
+  height: 140px;
   resize: none;
 }
+
+.form-btn {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
 
 /* --------------------
    FOOTER
@@ -421,6 +462,10 @@ section {
   .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .contact-form {
+  padding: 25px;
   }
 
   .footer-brand p {
