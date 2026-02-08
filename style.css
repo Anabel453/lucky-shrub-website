@@ -52,6 +52,25 @@ body {
   align-items: center;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 55px;
+  height: auto;
+}
+
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2d6a4f;
+  letter-spacing: 1px;
+}
+
+
 /* Navigation Menu */
 .nav ul {
   list-style: none;
@@ -63,7 +82,24 @@ body {
   text-decoration: none;
   color: #222;
   font-weight: 600;
+  position: relative;
+  padding-bottom: 4px;
   transition: 0.3s;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: #2d6a4f;
+  transition: 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
 }
 
 .nav a:hover {
@@ -232,6 +268,39 @@ section {
 }
 
 /* --------------------
+   WHY CHOOSE US
+--------------------- */
+
+.why-us {
+  background: #e9f5ec;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.why-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+}
+
+.why-card h3 {
+  margin-bottom: 10px;
+  color: #1b4332;
+}
+
+
+/* --------------------
    NURSERY GRID
 --------------------- */
 
@@ -319,58 +388,50 @@ section {
 --------------------- */
 
 .contact-form {
-  max-width: 550px;
-  margin: auto;
-  background: white;
-  padding: 35px;
-  border-radius: 16px;
-  box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.10);
-}
-
-.form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 18px;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
 }
 
-.form-group label {
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #1b4332;
-}
-
-.form-group input,
-.form-group textarea {
-  padding: 14px;
-  border-radius: 10px;
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: 15px;
-  outline: none;
-  transition: 0.3s;
+  font-size: 16px;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #2d6a4f;
-  box-shadow: 0px 0px 0px 4px rgba(45, 106, 79, 0.15);
-}
-
-.form-group textarea {
-  height: 140px;
+.contact-form textarea {
+  height: 130px;
   resize: none;
 }
 
-.form-btn {
-  width: 100%;
-  border: none;
-  cursor: pointer;
+/* --------------------
+   CTA SECTION
+--------------------- */
+
+.cta {
+  background: linear-gradient(to right, #2d6a4f, #1b4332);
+  color: white;
+  text-align: center;
+  padding: 80px 0;
 }
 
+.cta-content h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
 
-/* --------------------
-   FOOTER
---------------------- */
+.cta-content p {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 25px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 
 /* --------------------
    FOOTER
@@ -456,6 +517,10 @@ section {
   }
 
   .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+   .why-grid {
     grid-template-columns: 1fr;
   }
 
